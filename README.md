@@ -7,7 +7,7 @@ Personal shell config for macOS. Symlinked into `$HOME` by `install.sh`.
 - `zshrc` — main shell rc. Loads oh-my-zsh + powerlevel10k, fzf/zoxide/eza/bat, iTerm2 per-tab auto-coloring, and the Obsidian helpers.
 - `zprofile` — login shell init (`brew shellenv`).
 - `obsidian.zsh` — `obs`, `obsg`, `obsd`, `obs-recent`, `obs-urls`, `obs-grep`. See below.
-- `install.sh` — idempotent symlinker. Backs up any existing `~/.zshrc` / `~/.zprofile`, then symlinks.
+- `install.sh` — idempotent symlinker. Backs up any existing `~/.zshrc` / `~/.zprofile`, then symlinks. Also handles `p10k.zsh` once it's been tracked (see below).
 
 ## Bootstrap a new machine
 
@@ -17,6 +17,17 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone git@github.com:matthewvilaysack/dotfiles.git ~/code/config/dotfiles
 ~/code/config/dotfiles/install.sh
 ```
+
+## Tracking a new dotfile
+
+After running `p10k configure` (or generating any other `~/.<file>` you want versioned), import it into the repo with one command — it moves the file in and replaces the original with a symlink:
+
+```sh
+~/code/config/dotfiles/install.sh import .p10k.zsh p10k.zsh
+git -C ~/code/config/dotfiles add p10k.zsh && git -C ~/code/config/dotfiles commit -m "add p10k config"
+```
+
+After that, `install.sh` will keep `~/.p10k.zsh` symlinked to the repo on every machine.
 
 ## Obsidian helpers
 
