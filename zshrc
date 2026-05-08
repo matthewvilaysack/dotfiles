@@ -1,5 +1,4 @@
 export PATH="$HOME/.local/bin:$PATH"
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Powerlevel10k instant prompt — must stay near the top of .zshrc
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -70,3 +69,9 @@ alias ctrl-day='glow -p "$OBSIDIAN_VAULT/Mac Mini Day 1 - 2026-05-07.md"'
 # Plugins (must load after oh-my-zsh; syntax-highlighting must load LAST)
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# iTerm2 shell integration (Cmd-Shift-↑/↓ jumps between prompts).
+[[ -f ~/.iterm2_shell_integration.zsh ]] && source ~/.iterm2_shell_integration.zsh
+
+# Machine-specific overrides (untracked).
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
