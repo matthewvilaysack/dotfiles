@@ -11,8 +11,8 @@ ZSH_THEME=""  # using brew-installed powerlevel10k instead
 plugins=(git macos brew zoxide fzf)
 source $ZSH/oh-my-zsh.sh
 
-# Powerlevel10k theme
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+# Powerlevel10k theme (cloned to oh-my-zsh custom themes; brew formula has init issues on Sequoia)
+source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # iTerm2 per-tab auto color: first tab orange, others rotate through a palette.
