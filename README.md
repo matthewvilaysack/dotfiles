@@ -7,6 +7,7 @@ Personal shell config for macOS. Symlinked into `$HOME` by `install.sh`.
 - `zshrc` — main shell rc. Loads oh-my-zsh + powerlevel10k, fzf/zoxide/eza/bat, iTerm2 per-tab auto-coloring, and the Obsidian helpers.
 - `zprofile` — login shell init (`brew shellenv`).
 - `obsidian.zsh` — `obs`, `obsg`, `obsd`, `obs-recent`, `obs-urls`, `obs-grep`. See below.
+- `obsidian-setup.md` — full write-up of the personal note-taking system (vault layout, daily-note workflow, related Claude Code skills). Take inspiration from it.
 - `install.sh` — idempotent symlinker. Backs up any existing `~/.zshrc` / `~/.zprofile`, then symlinks. Also handles `p10k.zsh` once it's been tracked (see below).
 
 ## Bootstrap a new machine
