@@ -73,5 +73,10 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # iTerm2 shell integration (Cmd-Shift-↑/↓ jumps between prompts).
 [[ -f ~/.iterm2_shell_integration.zsh ]] && source ~/.iterm2_shell_integration.zsh
 
+# phone-control: drive Claude Code from the phone via tmux + SSH + Tailscale.
+# PHONE_CONTROL_WRAP_CLAUDE=1 makes plain `claude` always launch inside tmux.
+export PHONE_CONTROL_WRAP_CLAUDE=1
+[[ -f ~/code/phone-control/shell/phone-control.zsh ]] && source ~/code/phone-control/shell/phone-control.zsh
+
 # Machine-specific overrides (untracked).
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
